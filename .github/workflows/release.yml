@@ -5,9 +5,8 @@ on:
   push:
     branches:
       # this will run on the specified branch
-      - master
-      - development
-
+      - desktop
+      - desktop-staging
 env:
   REACT_APP_BLOCKNATIVE_KEY: ${{ secrets.REACT_APP_BLOCKNATIVE_KEY }}
   REACT_APP_FORTMATIC_KEY: ${{ secrets.REACT_APP_FORTMATIC_KEY }}
@@ -37,7 +36,7 @@ jobs:
       - run: yarn install
 
       - name: Build/Release Desktop App
-        uses: samuelmeuli/action-electron-builder@v1
+        uses: nicosampler/action-electron-builder@v1
         with:
           #Build scipt
           build_script_name: build-desktop
@@ -49,10 +48,10 @@ jobs:
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
-          release: true
+          release: contains(github.ref, 'desktop')
 
       - name: 'Upload Artifacts Linux'
-        if: contains(github.ref, 'development') && startsWith(matrix.os, 'ubuntu')
+        if: contains(github.ref, 'desktop-staging') && startsWith(matrix.os, 'ubuntu')
         uses: actions/upload-artifact@v2
         with:
           name: Desktop Linux
