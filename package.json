@@ -57,7 +57,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "gnosis",
+        "owner": "nicosampler",
         "repo": "safe-react"
       }
     ],
@@ -108,7 +108,7 @@
       "publish": [
         {
           "provider": "github",
-          "owner": "gnosis",
+          "owner": "nicosampler",
           "repo": "safe-react"
         }
       ]
