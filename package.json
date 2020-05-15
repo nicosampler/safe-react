@@ -2,13 +2,13 @@
   "name": "safe-react",
   "version": "2.1.1",
   "description": "Allowing crypto users manage funds in a safer way",
-  "homepage": "https://github.com/gnosis/safe-react#readme",
+  "homepage": "https://github.com/nicosampler/safe-react#readme",
   "bugs": {
-    "url": "https://github.com/gnosis/safe-react/issues"
+    "url": "https://github.com/nicosampler/safe-react/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gnosis/safe-react.git"
+    "url": "https://github.com/nicosampler/safe-react.git"
   },
   "license": "MIT",
   "author": {
