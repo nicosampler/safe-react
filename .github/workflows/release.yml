@@ -5,7 +5,7 @@ on:
   push:
     branches:
       # this will run on the specified branch
-      - desktop
+      - desktop-production
       - desktop-staging
 env:
   REACT_APP_BLOCKNATIVE_KEY: ${{ secrets.REACT_APP_BLOCKNATIVE_KEY }}
@@ -48,7 +48,7 @@ jobs:
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
-          release: contains(github.ref, 'desktop')
+          release: ${{ contains(github.ref, 'desktop-production') }}
 
       - name: 'Upload Artifacts Linux'
         if: contains(github.ref, 'desktop-staging') && startsWith(matrix.os, 'ubuntu')
